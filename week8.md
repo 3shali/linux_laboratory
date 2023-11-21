@@ -5,6 +5,7 @@
 
 int main() // Use int main() instead of main()
 {
+
     int pid;
     printf("I'm the original process with PID %d and PPID %d.\n", getpid(), getppid());
     pid = fork();
