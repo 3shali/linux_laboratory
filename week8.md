@@ -2,7 +2,6 @@
 ### 1.write a c program that illustrates how an orphan is created
 #include <stdio.h>
 #include <unistd.h> // Include this header for the sleep function
-
 int main() // Use int main() instead of main()
 {
 
@@ -37,6 +36,7 @@ PID2243 termanates.
 
 int main()
 {
+
     int pfds[2];
     char buf[80];  // Corrected the size of the buffer
     if (pipe(pfds) == -1)
@@ -77,18 +77,19 @@ student
 #include<unistd.h>
 int main()
 {
-int pfds[2];
-char buf[30];
-if(pipe(pfds)==-1)
-{
-perror("pipe");
-exit(1);
-}
-printf("writing to file descriptor #%d\n", pfds[1]);
-write(pfds[1],"test",5);
-printf("reading from file descriptor #%d\n ", pfds[0]);
-read(pfds[0],buf,5);
-printf("read\"%s\"\n" ,buf);
+
+    int pfds[2];
+    char buf[30];
+    if(pipe(pfds)==-1)
+    {
+        perror("pipe");
+        exit(1);
+    }
+     printf("writing to file descriptor #%d\n", pfds[1]);
+    write(pfds[1],"test",5);
+    printf("reading from file descriptor #%d\n ", pfds[0]);
+    read(pfds[0],buf,5);
+    printf("read\"%s\"\n" ,buf);
 }
 ### O/P: 
 writing to file descriptor #4
